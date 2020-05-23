@@ -44,7 +44,7 @@ fn read_token() -> anyhow::Result<String> {
 }
 
 fn read_bind() -> Result<std::net::SocketAddr, std::net::AddrParseError> {
-	let bind_str = env::var("BIND").unwrap_or("[::]:9739".to_string());
+	let bind_str = env::var("BIND").unwrap_or("[::]:9742".to_string());
 	let bind: Result<std::net::SocketAddr, std::net::AddrParseError> = bind_str.parse();
 	bind
 }
