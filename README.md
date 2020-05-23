@@ -47,3 +47,13 @@ remo_reverse_direction_cumulative_electric_energy{id="[deducted]",name="Home sma
 - `name`: Appliance nickname
 
 ## Recommended recording rules
+
+```yaml
+groups:
+  - name: remo_e
+    rules:
+      - record: remo:calculated:normal_direction_cumulative_electric_energy
+        expr: 'remo_normal_direction_cumulative_electric_energy * on (id) remo_coefficient * on (id) remo_cumulative_electric_energy_unit'
+      - record: remo:calculated:reverse_direction_cumulative_electric_energy
+        expr: 'remo_reverse_direction_cumulative_electric_energy * on (id) remo_coefficient * on (id) remo_cumulative_electric_energy_unit'
+```
