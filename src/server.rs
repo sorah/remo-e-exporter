@@ -141,7 +141,7 @@ impl Engine {
             if !smart_meter.echonetlite_properties.is_some() {
                 continue;
             }
-            let labels = vec![appliance.id.as_ref(), appliance.nickname.as_ref()];
+            let labels = vec![appliance.nickname.as_ref(), appliance.id.as_ref()];
             let properties = smart_meter.echonetlite_properties.unwrap();
 			for prop in properties.into_iter() {
                 let value_f: Result<f64, std::num::ParseFloatError> = prop.val.parse();
